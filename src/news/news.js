@@ -17,10 +17,8 @@ var onAlbumImagesGet = function()
       }, miliseconds, i);
 
       i=i+3;
-      miliseconds += 2000;
+      miliseconds += 200;
     }
-    //setInterval(function(){ alert("Hello"); }, 3000);
-    //displayImages(myImgArray, begin, end);
   }
 }
 
@@ -28,17 +26,33 @@ var displayImages = function(images, begin, end)
 {
   var container = document.getElementById("photosContainer");
 
-  //for(var i=0; i< images.length; i++)
+  var rowElem = document.createElement("div");
+  rowElem.classList = 'row';
+
   for(var i=begin; i< end; i++)
   {
+    var colElem = document.createElement("div");
+
+    colElem.classList = "col-xs-6 col-md-3";
+
+    var aHrefElem = document.createElement("a");
+
+    aHrefElem.setAttribute("href","#");
+    aHrefElem.classList = "thumbnail";
+
+    rowElem.appendChild(colElem);
+    colElem.appendChild(aHrefElem);
+
     var elem = document.createElement('img');
 
     var node = elem.setAttribute("src", images[i].url);
-    elem.classList = 'images';
-    //elem.setAttribute("title", myObj.title);
+
     elem.append(node);
-    container.append(elem);
+
+    aHrefElem.appendChild(elem);
   }
+
+  container.append(rowElem);
 }
 
 var newsFunction = function()
@@ -48,12 +62,12 @@ var newsFunction = function()
     myArray = JSON.parse(this.responseText);
 
     var container = document.getElementById("albumsContainer");
-
+    var btnColor = ["btn btn-default", "btn btn-primary", "btn btn-success", "btn btn-info", "btn btn-warning", "btn btn-danger"];
     for(var i=0; i< myArray.length; i++)
     {
       var myObj = myArray[i];
       var elem = document.createElement('button');
-      elem.classList = 'button';
+      elem.classList = 'button text-left ' + btnColor[i%6];
       var elemText = document.createTextNode(myObj.id + ". " + myObj.title);
       elem.append(elemText);
       container.append(elem);
@@ -79,7 +93,8 @@ var requestAlbumImages = function(id)
 var clearImages = function()
 {
   var containerImages = document.getElementById("photosContainer");
-  //containerImages.textContent = "";
+  console.log(containerImages);
+
   while (containerImages.firstChild) {
     containerImages.removeChild(containerImages.firstChild);
   }

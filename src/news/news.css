@@ -1,4 +1,4 @@
-.button {
+#albumsContainer .button {
   width : 600px;
   height : 40px;
   text-align: left;
@@ -7,15 +7,6 @@
   margin-left: 25px;
   position: relative;
   display: block;
-  background-color: #c792ed;
-}
-
-.button:nth-of-type(2n) {
-  background-color: #9992ed;
-}
-
-.button:nth-of-type(4n) {
-  background-color: #92dfed;
 }
 
 .images {
