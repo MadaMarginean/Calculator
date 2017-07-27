@@ -1,0 +1,35 @@
+.button {
+  width : 600px;
+  height : 40px;
+  text-align: left;
+  text-shadow: : white;
+  font-size: 15px;
+  margin-left: 25px;
+  position: relative;
+  display: block;
+  background-color: #c792ed;
+}
+
+.button:nth-of-type(2n) {
+  background-color: #9992ed;
+}
+
+.button:nth-of-type(4n) {
+  background-color: #92dfed;
+}
+
+.images {
+  display: inline;
+  width: 25%;
+  height: 25%;
+  top: 100px;
+}
+
+#phototsContainer {
+  width: 205px;
+  height: 220px;
+  margin-left: 15px;
+  position: relative;
+  top: 60px;
+
+}
