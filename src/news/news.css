@@ -1,0 +1,26 @@
+#albumsContainer .button {
+  width : 600px;
+  height : 40px;
+  text-align: left;
+  text-shadow: : white;
+  font-size: 15px;
+  margin-left: 25px;
+  position: relative;
+  display: block;
+}
+
+.images {
+  display: inline;
+  width: 25%;
+  height: 25%;
+  top: 100px;
+}
+
+#phototsContainer {
+  width: 205px;
+  height: 220px;
+  margin-left: 15px;
+  position: relative;
+  top: 60px;
+
+}
